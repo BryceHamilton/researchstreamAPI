@@ -1,0 +1,27 @@
+{
+  "name": "research-stream-api",
+  "version": "1.0.0",
+  "description": "REST API for Research Stream",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bryce Hamilton",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.9",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-node": "^0.3.4",
+    "nodemon": "^2.0.6"
+  }
+}
