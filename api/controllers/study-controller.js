@@ -2,7 +2,12 @@ const Study = require('../models/study');
 
 // Display list of all Studies.
 exports.study_list = (req, res) => {
-  res.send('NOT IMPLEMENTED: Author list');
+  Study.find({}, 'title').exec((err, studies_list) => {
+    if (err) {
+      return next(err);
+    }
+    res.status(200).send(studies_list);
+  });
 };
 
 // Add Study

@@ -13,6 +13,8 @@ const {
 
 const indexRoutes = require('./api/routes');
 const testRoutes = require('./api/routes/test');
+const studyRoutes = require('./api/routes/study');
+const study = require('./api/models/study');
 
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
@@ -24,7 +26,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('db connected');
-  addMockStudy();
+  // addMockStudy();
 });
 
 const app = express();
@@ -37,6 +39,7 @@ app.use(express.static('public'));
 
 app.use('/', indexRoutes);
 app.use('/test', testRoutes);
+app.use('/study', studyRoutes);
 
 app.use(setHeaders);
 app.use(catchClientErrors);
