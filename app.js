@@ -1,8 +1,9 @@
 const path = require('path');
-require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+require('dotenv').config();
+const passportSetup = require('./config/passport-setup');
 
 const {
   setHeaders,
@@ -12,7 +13,8 @@ const {
 } = require('./api/handlers/app-handlers');
 
 const indexRoutes = require('./api/routes');
-const studyRoutes = require('./api/routes/study');
+const authRoutes = require('./api/routes/auth-routes');
+const studyRoutes = require('./api/routes/study-routes');
 
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
@@ -35,6 +37,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/auth', authRoutes);
 app.use('/', indexRoutes);
 app.use('/study', studyRoutes);
 
