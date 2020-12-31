@@ -1,20 +1,50 @@
+const { ObjectID } = require('mongoose');
 const Study = require('../models/study');
 
-// Display list of all Studies.
-exports.study_list = (req, res) => {
-  Study.find({}, 'title').exec((err, studies_list) => {
-    if (err) {
-      return next(err);
-    }
-    res.status(200).send(studies_list);
-  });
-};
+/* [CREATE] */
 
-// Add Study
-exports.add_study = (req, res, next) => {
-  const { study } = req;
+exports.create_study_post = (req, res, next) => {
+  const { study } = req.body;
   Study.create(study, (err, study) => {
     if (err) return next(err);
     console.log('study added', study);
   });
+};
+
+/* [READ] */
+
+exports.get_study_list = (req, res) => {
+  Study.find({}, 'title').exec((err, studies_list) => {
+    if (err) {
+      return next(err);
+    }
+    res.status(200).json(studies_list);
+  });
+};
+
+exports.get_study_by_id = (req, res) => {
+  const { id } = req.params;
+  const _id = ObjectID(id);
+  Study.find({ _id }, 'title').exec((err, studies_list) => {
+    if (err) {
+      return next(err);
+    }
+    res.status(200).json(studies_list);
+  });
+};
+
+/* [UPDATE] */
+
+exports.update_study_put = function (req, res) {
+  res.send('NOT IMPLEMENTED: Author update PUT');
+};
+
+exports.update_study_patch = function (req, res) {
+  res.send('NOT IMPLEMENTED: Author update PATCH');
+};
+
+/* [DELETE] */
+
+exports.delete_study = function (req, res) {
+  res.send('NOT IMPLEMENTED: Author delete POST');
 };

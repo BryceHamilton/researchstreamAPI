@@ -2,8 +2,10 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const ParticipantSchema = new Schema({
-  _id: Schema.Types.ObjectId,
-});
+const ParticipantSchema = new Schema();
 
-module.exports = mongoose.model('Study', ParticipantSchema);
+module.exports = mongoose.model(
+  'Participant',
+  ParticipantSchema,
+  'Participant'
+);

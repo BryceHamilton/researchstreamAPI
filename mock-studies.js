@@ -1,6 +1,8 @@
+const { ObjectID } = require('mongoose');
+
 const hardCodedStudies = [
   {
-    studyId: 'kru',
+    _id: ObjectID('kru'),
     title: 'Insulin and Kidney Function Study',
     date: 'July 2019',
     purpose:
@@ -25,7 +27,7 @@ const hardCodedStudies = [
       'If you decide to take part in this study, you will be asked to visit the hospital for one visit. The test will take approximately 5 hours to complete. The visit includes:\n1. Blood samples\n2. Urine samples\n3. Consumption of an oral phosphate drink (1 cup of water\n4. that contains a total of 500 mg of phosphate)\n5. Questions regarding your medication and supplement use',
   },
   {
-    studyId: 'hmrl',
+    _id: ObjectID('hmrl'),
     title: 'Human Mobility Lab Study',
     date: 'November 2018',
     purpose:
@@ -50,7 +52,7 @@ const hardCodedStudies = [
       'The testing will take approximately 1 to 1 1/2 hours in length. Your height and weight will first be measured, and you will be asked to report your age and level of physical activity (e.g. exercise habits). You will be asked to change into spandex shorts, a sleeveless shirt, and a pair of athletic shoes so that a set of small reflective markers can be secured to your arms, legs, and trunk by tape and Velcro wraps. These markers allow the researchers to measure the positions of your limbs while you walk. A set of small sensors will be taped to your leg on the surface of several major muscles. The sensors allow the researchers to record the magnitude and timing of your muscle activity while you walk. The sensors are purely a measurement device. They do not and cannot deliver any sort of stimulus or electrical “shock” to your muscles.',
   },
   {
-    studyId: 'depressionStudy',
+    _id: ObjectID('depressionStudy'),
     title: 'Probiotics and Depression',
     date: 'January 2019',
     purpose:
@@ -69,7 +71,7 @@ const hardCodedStudies = [
       'At study appointments participants will fill out a questionaire and provide blood and urine samples. They will also undergo 2 MRIs and 3 polysomnograms.',
   },
   {
-    studyId: 'qmpl3',
+    _id: ObjectID('qmpl3'),
     title: 'Type of Cycling Exercise and Muscle Response',
     date: 'April 2019',
     purpose:
@@ -95,7 +97,7 @@ const hardCodedStudies = [
       '1. Complete 2 fitness tests before training 2. Have 1 muscle biopsy taken before training. 3. Complete 7, 30-minute sessions of supervised aerobic exercise training on a stationary bike over a 2-week period. 4. Have 1 muscle biopsy taken after training. 5. Complete 2 fitness tests after training',
   },
   {
-    studyId: 'limbLab',
+    _id: ObjectID('limbLab'),
     title: 'KINARM Robot Study',
     date: 'March 2019',
     purpose:
@@ -114,7 +116,7 @@ const hardCodedStudies = [
     expectations: '',
   },
   {
-    studyId: 'cookLab',
+    _id: ObjectID('cookLab'),
     title:
       'Neuroscience Study Recruiting Healthy Women and Women with Migraine',
     date: 'February 2019',
@@ -139,7 +141,7 @@ const hardCodedStudies = [
       'Testing takes 2.5-3 hours and includes a series of ultrasound examinations on the head and arm, along with some measures of blood pressure and pulse.',
   },
   {
-    studyId: 'stromanStudy',
+    _id: ObjectID('stromanStudy'),
     title: 'Neural Basis of Pain (Females)',
     date: 'March 2019',
     purpose:
@@ -160,7 +162,7 @@ const hardCodedStudies = [
       'Participants will undergo two fMRI sessions scheduled approximately 1 week apart. During these sessions they will be given a noxious heat stimulus to the palm of their right hand. They will be asked to rate the pain associated with these stimuli. Participants with fibromyalgia will also be asked to donate a saliva sample for future genetic testing.',
   },
   {
-    studyId: 'exerciseStudy',
+    _id: ObjectID('exerciseStudy'),
     title: 'Exercise Intensity’s impact on Muscle',
     date: 'May 2019',
     purpose:
@@ -177,7 +179,7 @@ const hardCodedStudies = [
       '1. 1 preliminary visit (less than an hour) during which participants will perform a cycling test to exhaustion (test duration is typically less than 20 min) 2. 2 experimental sessions (7 am - 9 pm, 2 weeks apart), EACH involving: - ~30 min interval cycling - 6 muscle biopsies (3 from each leg) - 4 blood samples (2 from each arm) 3. Participants are free to read, use their laptops, and/or watch TV but must remain in the lab over the course of the day. 4. All meals will be provided 5. Experimental sessions will be conducted on Mondays or Tuesdays',
   },
   {
-    studyId: 'symptomsStudy',
+    _id: ObjectID('symptomsStudy'),
     title: 'METDA: Depression and/or Anxiety Study',
     date: 'May 2019',
     purpose:
@@ -194,7 +196,7 @@ const hardCodedStudies = [
     expectations: '',
   },
   {
-    studyId: 'fibroStudy',
+    _id: ObjectID('fibroStudy'),
     title: 'Neural Basis of Pain (Females with Fibromyalgia)',
     date: 'May 2019',
     purpose:
