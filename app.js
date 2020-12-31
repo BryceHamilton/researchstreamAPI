@@ -2,8 +2,10 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
 require('dotenv').config();
-const passportSetup = require('./config/passport-setup');
+const passport = require('passport');
+require('./config/passport-setup');
 
 const {
   setHeaders,
@@ -29,6 +31,11 @@ db.once('open', () => {
   // addMockStudy();
 });
 
+const cookies = cookieSession({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [process.env.SESSION_COOKIE_KEY],
+});
+
 const app = express();
 
 app.use(morgan('dev'));
@@ -36,6 +43,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(cookies);
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/auth', authRoutes);
 app.use('/', indexRoutes);
