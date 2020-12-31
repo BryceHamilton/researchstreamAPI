@@ -19,24 +19,29 @@ passport.use(
       callbackURL: '/auth/google/redirect',
     },
     // use async/await ?
-    async (accessToken, refreshToken, profile, done) => {
+    (accessToken, refreshToken, profile, done) => {
       // passport callback function
-      const currentParticipant = await Participant.findOne({
-        googleId: profile.id,
-      });
-
-      if (currentParticipant) {
-        console.log('newUser logged in', newUser);
-        done(null, currentParticipant);
-      } else {
-        const newParticipant = await new Participant({
-          username: profile.displayName,
-          googleId: profile.id,
-        }).save();
-
-        console.log('newParticipant added', newParticipant);
-        done(null, newParticipant);
-      }
+      //check if user already exists in our db with the given profile ID
+      Participant.findOne({ googleId: profile.id }).then(
+        (currentParticipant) => {
+          if (currentParticipant) {
+            //if we already have a record with the given profile ID
+            console.log('newUser logged in', newUser);
+            done(null, currentParticipant);
+          } else {
+            //if not, create a new user
+            new Participant({
+              username: profile.displayName,
+              googleId: profile.id,
+            })
+              .save()
+              .then((newParticipant) => {
+                console.log('newParticipant added', newParticipant);
+                done(null, newParticipant);
+              });
+          }
+        }
+      );
     }
   )
 );
