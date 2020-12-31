@@ -22,11 +22,11 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       // passport callback function
       //check if user already exists in our db with the given profile ID
-      Participant.findOne({ googleId: profile.id }).then(
-        (currentParticipant) => {
+      Participant.findOne({ googleId: profile.id })
+        .then((currentParticipant) => {
           if (currentParticipant) {
             //if we already have a record with the given profile ID
-            console.log('newUser logged in', newUser);
+            console.log('currentParticipant logged in', currentParticipant);
             done(null, currentParticipant);
           } else {
             //if not, create a new user
@@ -40,8 +40,8 @@ passport.use(
                 done(null, newParticipant);
               });
           }
-        }
-      );
+        })
+        .catch((err) => console.log(err));
     }
   )
 );
