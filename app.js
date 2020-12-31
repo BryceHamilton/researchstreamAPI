@@ -38,6 +38,7 @@ const cookies = cookieSession({
 
 const app = express();
 
+app.use(setHeaders);
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -53,7 +54,6 @@ app.use('/auth', authRoutes);
 app.use('/', indexRoutes);
 app.use('/study', studyRoutes);
 
-app.use(setHeaders);
 app.use(catchClientErrors);
 app.use(catchAllErrors);
 
