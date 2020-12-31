@@ -1,4 +1,4 @@
-const { ObjectID } = require('mongoose');
+const { ObjectId } = require('mongoose');
 const Study = require('../models/study');
 
 /* [CREATE] */
@@ -7,7 +7,7 @@ exports.create_study_post = (req, res, next) => {
   const { study } = req.body;
   Study.create(study, (err, study) => {
     if (err) return next(err);
-    console.log('study added', study);
+    console.log('study added', study.title);
   });
 };
 
@@ -24,7 +24,7 @@ exports.get_study_list = (req, res) => {
 
 exports.get_study_by_id = (req, res) => {
   const { id } = req.params;
-  const _id = ObjectID(id);
+  const _id = ObjectId(id);
   Study.find({ _id }, 'title').exec((err, studies_list) => {
     if (err) {
       return next(err);

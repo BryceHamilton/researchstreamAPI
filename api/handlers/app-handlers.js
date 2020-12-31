@@ -30,9 +30,10 @@ exports.catchAllErrors = (error, req, res) => {
 };
 
 exports.addMockStudy = () => {
-  const study = mockStudies[0];
+  const study = mockStudies[1];
   Study.create(study, (err, study) => {
     if (err) return console.error(err);
-    console.log('study added', study);
+    const { _id, title } = study;
+    console.log('study added', { _id, title });
   });
 };

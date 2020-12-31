@@ -1,4 +1,5 @@
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const TimeSlotSchema = new Schema({
   study: { type: Schema.Types.ObjectId, ref: 'Study' },
