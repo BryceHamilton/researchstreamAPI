@@ -3,12 +3,12 @@ require('dotenv').config();
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const Participant = require('../api/models/participant');
 
-passport.serializeUser((user, done) => {
-  done(null, user.id);
+passport.serializeUser((participant, done) => {
+  done(null, participant.id);
 });
 
 passport.deserializeUser((id, done) => {
-  User.findById(id).then((user) => done(null, user));
+  Participant.findById(id).then((participant) => done(null, participant));
 });
 
 passport.use(
@@ -19,29 +19,24 @@ passport.use(
       callbackURL: '/auth/google/redirect',
     },
     // use async/await ?
-    (accessToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, profile, done) => {
       // passport callback function
-      //check if user already exists in our db with the given profile ID
-      Participant.findOne({ googleId: profile.id }).then(
-        (currentParticipant) => {
-          if (currentParticipant) {
-            //if we already have a record with the given profile ID
-            console.log('newUser logged in', newUser);
-            done(null, currentParticipant);
-          } else {
-            //if not, create a new user
-            new Participant({
-              username: profile.displayName,
-              googleId: profile.id,
-            })
-              .save()
-              .then((newParticipant) => {
-                console.log('newParticipant added', newParticipant);
-                done(null, newParticipant);
-              });
-          }
-        }
-      );
+      const currentParticipant = await Participant.findOne({
+        googleId: profile.id,
+      });
+
+      if (currentParticipant) {
+        console.log('newUser logged in', newUser);
+        done(null, currentParticipant);
+      } else {
+        const newParticipant = await new Participant({
+          username: profile.displayName,
+          googleId: profile.id,
+        }).save();
+
+        console.log('newParticipant added', newParticipant);
+        done(null, newParticipant);
+      }
     }
   )
 );
