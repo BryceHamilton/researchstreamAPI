@@ -9,7 +9,6 @@ const passport = require('passport');
 require('./config/passport-setup');
 
 const {
-  setHeaders,
   catchClientErrors,
   catchAllErrors,
   addMockStudy,
@@ -40,7 +39,6 @@ const cookies = cookieSession({
 const app = express();
 
 app.use(cors());
-// app.use(setHeaders);
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
