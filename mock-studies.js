@@ -216,4 +216,252 @@ const hardCodedStudies = [
   },
 ];
 
+const withGeolocation = [
+  {
+    title: 'Insulin and Kidney Function Study',
+    purpose:
+      'To determine how insulin levels in the blood affect the way the kidneys eliminate phosphate into the urine in people with type 2 diabetes that have either normal or moderately reduced kidney function',
+    lab: 'Queen’s-KRU (Kidney Research Unit)',
+    location: {
+      lat: 44.2243662,
+      lng: -76.4939187,
+      address: 'Etherington Hall, Stuart Street, Kingston, ON, Canada',
+    },
+    compensation: 'undefined',
+    whoIsConducting:
+      '  Co-Principal Investigators: Dr. Rachel Holden and Dr.Christine White, Queen’s University/Kingston Health Science Centre – Kingston General Hospital site.\n' +
+      'Co-investigators: Aysha Draves, M.Sc. (Candidate), Queen’s University, Dr. Robyn Houlden and Dr. Jocelyn Garland, Queen’s University/Kingston Health Sciences Centre – Kingston General Hospital site, and Dr. Michael A. Adams, Biomedical and Molecular Sciences, Queen’s University.\n' +
+      'Main Contact: Corinne Babiolakis',
+    benefits:
+      '  You will not benefit directly from this study; however results from this study may improve the understanding of how insulin affects phosphate excretion and may benefit people in the future.',
+    inclusion: [
+      'Adults aged 40 and 80 who have non-insulin dependent type 2 diabetes with or without reduced kidney function',
+    ],
+    exclusion: [
+      'Known allergy to contrast',
+      'Known allergy to shellfish',
+      'Insulin use',
+    ],
+    expectations:
+      ' If you decide to take part in this study, you will be asked to visit the hospital for one visit. The test will take approximately 5 hours to complete. The visit includes:\n' +
+      '1. Blood samples\n' +
+      '2. Urine samples\n' +
+      '3. Consumption of an oral phosphate drink (1 cup of water\n' +
+      '4. that contains a total of 500 mg of phosphate)\n' +
+      '5. Questions regarding your medication and supplement use',
+    user: 'researcherTest@test.com',
+    timeSlots: [],
+    datePosted: 'Thu Sep 05 2019 17:21:07 GMT-0400 (Eastern Daylight Time)',
+  },
+  {
+    title: 'KINARM Robot Study',
+    purpose:
+      'We hope to create a better diagnostic tool for brain functions to help improve diagnosis, treatment, and therapies for patients',
+    lab: 'LIMB Laboratory using the Kinarm Robot.',
+    location: {
+      lat: 44.2243383,
+      lng: -76.49159600000002,
+      address: 'Botterell Hall, Stuart Street, Kingston, ON, Canada',
+    },
+    compensation:
+      'Participants will be compensated $20/hour for approximately 3 hours.',
+    whoIsConducting:
+      'Patrick Stroman (P.I), Jocelyn Powers (PhD candidate), Howie Warren (MSc. candidate)',
+    benefits:
+      'There are no direct benefits to participating in this study. However, the information we obtain will improve our understanding of fibromyalgia and other chronic pain conditions, which could potentially improve future diagnostic and treatment strategies for these conditions.',
+    inclusion: [
+      '19-60 years old',
+      'Must be healthy or have diagnosed fibromyalgia',
+      'MRI compatible',
+    ],
+    exclusion: [
+      'Under 19 or over 60 years of age',
+      'History of mental illness or severe head trauma ',
+    ],
+    expectations:
+      'Participants will undergo two fMRI sessions scheduled approximately 1 week apart. During these sessions they will be given a noxious heat stimulus to the palm of their right hand. They will be asked to rate the pain associated with these stimuli. Participants with fibromyalgia will also be asked to donate a saliva sample for future genetic testing.\n',
+    user: 'researcher@decodemtl.com',
+    timeSlots: [],
+    datePosted: 'Wed Jan 22 2020 22:39:22 GMT-0500 (Eastern Standard Time)',
+  },
+  {
+    title: 'Insulin and Kidney Function Study',
+    purpose:
+      'To determine how insulin levels in the blood affect the way the kidneys eliminate phosphate into the urine in people with type 2 diabetes that have either normal or moderately reduced kidney function',
+    lab: 'Queen’s-KRU (Kidney Research Unit)',
+    location: {
+      lat: 44.2243662,
+      lng: -76.4939187,
+      address: 'Etherington Hall, Stuart Street, Kingston, ON, Canada',
+    },
+    compensation: 'undefined',
+    whoIsConducting:
+      '  Co-Principal Investigators: Dr. Rachel Holden and Dr.Christine White, Queen’s University/Kingston Health Science Centre – Kingston General Hospital site.\n' +
+      'Co-investigators: Aysha Draves, M.Sc. (Candidate), Queen’s University, Dr. Robyn Houlden and Dr. Jocelyn Garland, Queen’s University/Kingston Health Sciences Centre – Kingston General Hospital site, and Dr. Michael A. Adams, Biomedical and Molecular Sciences, Queen’s University.\n' +
+      'Main Contact: Corinne Babiolakis',
+    benefits:
+      '  You will not benefit directly from this study; however results from this study may improve the understanding of how insulin affects phosphate excretion and may benefit people in the future.',
+    inclusion: [
+      'Adults aged 40 and 80 who have non-insulin dependent type 2 diabetes with or without reduced kidney function',
+    ],
+    exclusion: [
+      'Known allergy to contrast',
+      'Known allergy to shellfish',
+      'Insulin use',
+    ],
+    expectations:
+      ' If you decide to take part in this study, you will be asked to visit the hospital for one visit. The test will take approximately 5 hours to complete. The visit includes:\n' +
+      '1. Blood samples\n' +
+      '2. Urine samples\n' +
+      '3. Consumption of an oral phosphate drink (1 cup of water\n' +
+      '4. that contains a total of 500 mg of phosphate)\n' +
+      '5. Questions regarding your medication and supplement use',
+    user: 'researcherTest@test.com',
+    timeSlots: [],
+    datePosted: 'Thu Sep 05 2019 17:21:07 GMT-0400 (Eastern Daylight Time)',
+  },
+  {
+    title: 'Language Learning Study',
+    purpose:
+      '\n' +
+      'This study is part of a broader project, which assesses language development across the lifespan. We will be comparing the strategies used by children when learning language to those used by adults.',
+    lab: '\nLanguage and Cognition Laboratory',
+    location: {
+      lat: 45.4945643,
+      lng: -73.57737750000001,
+      address:
+        'Concordia University, Boulevard de Maisonneuve Ouest, Montreal, QC, Canada',
+    },
+    compensation: '\n$10 per visit',
+    whoIsConducting: '\nKatherine Snelling or Zoe Saine',
+    benefits:
+      '\nParticipants will have the chance to learn a made up language.',
+    inclusion: ['Native English speaker', 'Age 17 - 30'],
+    exclusion: ['Known language delay'],
+    expectations:
+      '\n' +
+      'In this study, participants will learn a made-up language for around five minutes while we use an eye tracker to assess how this learning is unfolding. They will then try other language tasks so that we can assess how their language learning relates to their language and other abilities. Some of these follow up tasks are computerized, and some are in person. The follow up tasks involve activities like defining words and detecting patterns.',
+    user: 'researcher@decodemtl.com',
+    timeSlots: [],
+    datePosted: 'Thu Sep 05 2019 23:28:49 GMT-0400 (Eastern Daylight Time)',
+  },
+  {
+    title: 'Language Learning Study',
+    purpose:
+      '\n' +
+      'This study is part of a broader project, which assesses language development across the lifespan. We will be comparing the strategies used by children when learning language to those used by adults.',
+    lab: '\nLanguage and Cognition Laboratory',
+    location: {
+      lat: 45.4945643,
+      lng: -73.57737750000001,
+      address:
+        'Concordia University, Boulevard de Maisonneuve Ouest, Montreal, QC, Canada',
+    },
+    compensation: '\n$10 per visit',
+    whoIsConducting: '\nKatherine Snelling or Zoe Saine',
+    benefits:
+      '\nParticipants will have the chance to learn a made up language.',
+    inclusion: ['Native English speaker', 'Age 17 - 30'],
+    exclusion: ['Known language delay'],
+    expectations:
+      '\n' +
+      'In this study, participants will learn a made-up language for around five minutes while we use an eye tracker to assess how this learning is unfolding. They will then try other language tasks so that we can assess how their language learning relates to their language and other abilities. Some of these follow up tasks are computerized, and some are in person. The follow up tasks involve activities like defining words and detecting patterns.',
+    user: 'researcher@decodemtl.com',
+    timeSlots: [],
+    datePosted: 'Thu Sep 05 2019 23:28:49 GMT-0400 (Eastern Daylight Time)',
+  },
+  {
+    title: 'KINARM Robot Study',
+    purpose:
+      'We hope to create a better diagnostic tool for brain functions to help improve diagnosis, treatment, and therapies for patients',
+    lab: 'LIMB Laboratory using the Kinarm Robot.',
+    location: {
+      lat: 44.2243383,
+      lng: -76.49159600000002,
+      address: 'Botterell Hall, Stuart Street, Kingston, ON, Canada',
+    },
+    compensation:
+      'Participants will be compensated $20/hour for approximately 3 hours.',
+    whoIsConducting:
+      'Patrick Stroman (P.I), Jocelyn Powers (PhD candidate), Howie Warren (MSc. candidate)',
+    benefits:
+      'There are no direct benefits to participating in this study. However, the information we obtain will improve our understanding of fibromyalgia and other chronic pain conditions, which could potentially improve future diagnostic and treatment strategies for these conditions.',
+    inclusion: [
+      '19-60 years old',
+      'Must be healthy or have diagnosed fibromyalgia',
+      'MRI compatible',
+    ],
+    exclusion: [
+      'Under 19 or over 60 years of age',
+      'History of mental illness or severe head trauma ',
+    ],
+    expectations:
+      'Participants will undergo two fMRI sessions scheduled approximately 1 week apart. During these sessions they will be given a noxious heat stimulus to the palm of their right hand. They will be asked to rate the pain associated with these stimuli. Participants with fibromyalgia will also be asked to donate a saliva sample for future genetic testing.\n',
+    user: 'researcher@decodemtl.com',
+    timeSlots: [],
+    datePosted: 'Wed Jan 22 2020 22:39:22 GMT-0500 (Eastern Standard Time)',
+  },
+  {
+    title: 'Insulin and Kidney Function Study',
+    purpose:
+      'To determine how insulin levels in the blood affect the way the kidneys eliminate phosphate into the urine in people with type 2 diabetes that have either normal or moderately reduced kidney function',
+    lab: 'Queen’s-KRU (Kidney Research Unit)',
+    location: {
+      lat: 44.2243662,
+      lng: -76.4939187,
+      address: 'Etherington Hall, Stuart Street, Kingston, ON, Canada',
+    },
+    compensation: 'undefined',
+    whoIsConducting:
+      '  Co-Principal Investigators: Dr. Rachel Holden and Dr.Christine White, Queen’s University/Kingston Health Science Centre – Kingston General Hospital site.\n' +
+      'Co-investigators: Aysha Draves, M.Sc. (Candidate), Queen’s University, Dr. Robyn Houlden and Dr. Jocelyn Garland, Queen’s University/Kingston Health Sciences Centre – Kingston General Hospital site, and Dr. Michael A. Adams, Biomedical and Molecular Sciences, Queen’s University.\n' +
+      'Main Contact: Corinne Babiolakis',
+    benefits:
+      '  You will not benefit directly from this study; however results from this study may improve the understanding of how insulin affects phosphate excretion and may benefit people in the future.',
+    inclusion: [
+      'Adults aged 40 and 80 who have non-insulin dependent type 2 diabetes with or without reduced kidney function',
+    ],
+    exclusion: [
+      'Known allergy to contrast',
+      'Known allergy to shellfish',
+      'Insulin use',
+    ],
+    expectations:
+      ' If you decide to take part in this study, you will be asked to visit the hospital for one visit. The test will take approximately 5 hours to complete. The visit includes:\n' +
+      '1. Blood samples\n' +
+      '2. Urine samples\n' +
+      '3. Consumption of an oral phosphate drink (1 cup of water\n' +
+      '4. that contains a total of 500 mg of phosphate)\n' +
+      '5. Questions regarding your medication and supplement use',
+    user: 'researcherTest@test.com',
+    timeSlots: [],
+    datePosted: 'Thu Sep 05 2019 17:21:07 GMT-0400 (Eastern Daylight Time)',
+  },
+  {
+    title: 'Language Learning Study',
+    purpose:
+      '\n' +
+      'This study is part of a broader project, which assesses language development across the lifespan. We will be comparing the strategies used by children when learning language to those used by adults.',
+    lab: '\nLanguage and Cognition Laboratory',
+    location: {
+      lat: 45.4945643,
+      lng: -73.57737750000001,
+      address:
+        'Concordia University, Boulevard de Maisonneuve Ouest, Montreal, QC, Canada',
+    },
+    compensation: '\n$10 per visit',
+    whoIsConducting: '\nKatherine Snelling or Zoe Saine',
+    benefits:
+      '\nParticipants will have the chance to learn a made up language.',
+    inclusion: ['Native English speaker', 'Age 17 - 30'],
+    exclusion: ['Known language delay'],
+    expectations:
+      '\n' +
+      'In this study, participants will learn a made-up language for around five minutes while we use an eye tracker to assess how this learning is unfolding. They will then try other language tasks so that we can assess how their language learning relates to their language and other abilities. Some of these follow up tasks are computerized, and some are in person. The follow up tasks involve activities like defining words and detecting patterns.',
+    user: 'researcher@decodemtl.com',
+    timeSlots: [],
+    datePosted: 'Thu Sep 05 2019 23:28:49 GMT-0400 (Eastern Daylight Time)',
+  },
+];
+
 module.exports = hardCodedStudies;

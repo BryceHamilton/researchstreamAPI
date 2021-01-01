@@ -14,7 +14,7 @@ exports.create_study_post = (req, res, next) => {
 /* [READ] */
 
 exports.get_study_list = (req, res) => {
-  Study.find({}, 'title').exec((err, studies_list) => {
+  Study.find({}).exec((err, studies_list) => {
     if (err) {
       return next(err);
     }
@@ -25,7 +25,7 @@ exports.get_study_list = (req, res) => {
 exports.get_study_by_id = (req, res) => {
   const { id } = req.params;
   const _id = ObjectId(id);
-  Study.find({ _id }, 'title').exec((err, studies_list) => {
+  Study.find({ _id }).exec((err, studies_list) => {
     if (err) {
       return next(err);
     }

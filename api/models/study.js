@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const StudySchema = new Schema({
   title: String,
   researcher: { type: Schema.Types.ObjectId, ref: 'Researcher' },
+  location: String,
   purpose: String,
   lab: String,
   location: String,

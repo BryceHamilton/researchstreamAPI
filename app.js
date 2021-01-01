@@ -7,6 +7,7 @@ const cors = require('cors');
 require('dotenv').config();
 const passport = require('passport');
 require('./config/passport-setup');
+const mockStudies = require('./mock-studies');
 
 const {
   catchClientErrors,
@@ -28,7 +29,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('db connected');
-  // addMockStudy();
+  // mockStudies.forEach(addMockStudy);
 });
 
 const cookies = cookieSession({

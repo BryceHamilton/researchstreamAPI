@@ -1,4 +1,3 @@
-const mockStudies = require('../../mock-studies');
 const Study = require('../models/study');
 
 exports.catchClientErrors = (req, res, next) => {
@@ -16,8 +15,7 @@ exports.catchAllErrors = (error, req, res) => {
   });
 };
 
-exports.addMockStudy = () => {
-  const study = mockStudies[1];
+exports.addMockStudy = (study) => {
   Study.create(study, (err, study) => {
     if (err) return console.error(err);
     const { _id, title } = study;
