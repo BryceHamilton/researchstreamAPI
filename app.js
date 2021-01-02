@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
 require('dotenv').config();
 const passport = require('passport');
@@ -39,14 +40,15 @@ const cookies = cookieSession({
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: process.env.CLIENT_ADDRESS }));
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cookies);
+// app.use(cookies);
+app.use(cookieParser());
 
 app.use(passport.initialize());
 app.use(passport.session());

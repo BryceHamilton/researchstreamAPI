@@ -2,6 +2,7 @@ const passport = require('passport');
 require('dotenv').config();
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const Participant = require('../api/models/participant');
+const { create_participant } = require('../api/controllers/auth-controller');
 
 passport.serializeUser((participant, done) => {
   done(null, participant.id);
@@ -18,30 +19,6 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: '/auth/google/redirect',
     },
-    // use async/await ?
-    (accessToken, refreshToken, profile, done) => {
-      // passport callback function
-      //check if user already exists in our db with the given profile ID
-      Participant.findOne({ googleId: profile.id })
-        .then((currentParticipant) => {
-          if (currentParticipant) {
-            //if we already have a record with the given profile ID
-            console.log('currentParticipant logged in', currentParticipant);
-            done(null, currentParticipant);
-          } else {
-            //if not, create a new user
-            new Participant({
-              username: profile.displayName,
-              googleId: profile.id,
-            })
-              .save()
-              .then((newParticipant) => {
-                console.log('newParticipant added', newParticipant);
-                done(null, newParticipant);
-              });
-          }
-        })
-        .catch((err) => console.log(err));
-    }
+    create_participant
   )
 );

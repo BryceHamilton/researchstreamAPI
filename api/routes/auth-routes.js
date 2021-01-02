@@ -1,16 +1,10 @@
 const router = require('express').Router();
 const passport = require('passport');
+const { create_session, get_user } = require('../controllers/auth-controller');
+const { authCheck, sessionCheck } = require('../middleware/auth');
 
-const authCheck = (req, res, next) => (!req.user ? res.redirect('/') : next());
+router.get('/user', sessionCheck, get_user);
 
-router.get('/login', (req, res) => {
-  // client route
-});
-
-// auth logout
-router.get('/logout', (req, res) => {});
-
-// auth with google
 router.get(
   '/google',
   passport.authenticate('google', {
@@ -18,8 +12,13 @@ router.get(
   })
 );
 
-router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-  res.redirect('http://localhost:3000/');
-});
+router.get(
+  '/google/redirect',
+  authCheck,
+  passport.authenticate('google'),
+  create_session
+);
+
+router.get('/logout', (req, res) => {});
 
 module.exports = router;
