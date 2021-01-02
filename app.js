@@ -47,7 +47,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(cookies);
+app.use(cookies);
 app.use(cookieParser());
 
 app.use(passport.initialize());

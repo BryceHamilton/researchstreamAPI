@@ -25,8 +25,10 @@ exports.create_participant = (accessToken, refreshToken, profile, done) => {
 
 exports.create_session = (req, res, next) => {
   const sessionId = generateID();
+  console.log('creating session');
   Participant.findOne({ googleId: req.user.googleId })
     .then((participant) => {
+      console.log('participant', participant);
       if (participant) {
         const session = {
           sessionId: sessionId,
