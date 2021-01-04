@@ -7,7 +7,7 @@ const StudySchema = new Schema({
   location: String,
   purpose: String,
   lab: String,
-  location: String,
+  location: { lat: Number, lng: Number, address: String },
   compensation: String,
   whoIsConducting: String,
   benefits: String,

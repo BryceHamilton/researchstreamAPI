@@ -464,4 +464,4 @@ const withGeolocation = [
   },
 ];
 
-module.exports = hardCodedStudies;
+module.exports = withGeolocation;

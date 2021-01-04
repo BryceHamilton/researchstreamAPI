@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-const mockStudies = require('./mock-studies');
+const withGeolocation = require('./mock-studies');
 
 const {
   catchClientErrors,
@@ -26,7 +26,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('db connected');
-  // mockStudies.forEach(addMockStudy);
+  // withGeolocation.forEach(addMockStudy);
 });
 
 const app = express();

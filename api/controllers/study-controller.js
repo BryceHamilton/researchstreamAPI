@@ -1,4 +1,3 @@
-const { ObjectId } = require('mongoose');
 const Study = require('../models/study');
 
 /* [CREATE] */
@@ -24,7 +23,6 @@ exports.get_study_list = (req, res) => {
 
 exports.get_study_by_id = (req, res) => {
   const { id } = req.params;
-  const _id = ObjectId(id);
   Study.find({ _id }).exec((err, studies_list) => {
     if (err) {
       return next(err);
