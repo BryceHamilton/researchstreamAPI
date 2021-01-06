@@ -3,4 +3,4 @@ yarn.lock
 .env
 TODO.md
 .DS_Store
-build/**/*
+build
