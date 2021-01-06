@@ -464,4 +464,4 @@ const withGeolocation = [
   },
 ];
 
-module.exports = withGeolocation;
+export default withGeolocation;

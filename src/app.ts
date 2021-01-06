@@ -1,22 +1,17 @@
-const path = require('path');
-const express = require('express');
-const morgan = require('morgan');
-const mongoose = require('mongoose');
-const cors = require('cors');
+import path from 'path';
+import express from 'express';
+import morgan from 'morgan';
+import mongoose from 'mongoose';
+import cors from 'cors';
 require('dotenv').config();
-const withGeolocation = require('./mock-studies');
 
-const {
-  catchClientErrors,
-  catchAllErrors,
-  addMockStudy,
-} = require('./api/handlers/app-handlers');
+import { catchClientErrors, catchAllErrors } from './api/handlers/app-handlers';
 
-const indexRoutes = require('./api/routes');
-const authRoutes = require('./api/routes/auth-routes');
-const studyRoutes = require('./api/routes/study-routes');
+import indexRoutes from './api/routes';
+import authRoutes from './api/routes/auth-routes';
+import studyRoutes from './api/routes/study-routes';
 
-mongoose.connect(process.env.DB_URL, {
+mongoose.connect(process.env.DB_URL || '', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -30,6 +25,8 @@ db.once('open', () => {
 });
 
 const app = express();
+
+app.set('port', process.env.PORT || 4000);
 
 app.use(cors());
 app.use(morgan('dev'));
@@ -45,4 +42,4 @@ app.use('/study', studyRoutes);
 app.use(catchClientErrors);
 app.use(catchAllErrors);
 
-module.exports = app;
+export default app;
