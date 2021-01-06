@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 require('dotenv').config();
 
-import { catchClientErrors, catchAllErrors } from './api/handlers/app-handlers';
+import { catchAllErrors } from './api/handlers/app-handlers';
 
 import indexRoutes from './api/routes';
 import authRoutes from './api/routes/auth-routes';
@@ -39,7 +39,6 @@ app.use('/auth', authRoutes);
 app.use('/', indexRoutes);
 app.use('/study', studyRoutes);
 
-app.use(catchClientErrors);
 app.use(catchAllErrors);
 
 export default app;

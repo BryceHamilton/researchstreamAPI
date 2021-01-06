@@ -1,12 +1,14 @@
-const router = require('express').Router();
-const {
+import express from 'express';
+const router = express.Router();
+
+import {
   create_study_post,
   get_study_list,
   get_study_by_id,
   update_study_put,
   update_study_patch,
   delete_study,
-} = require('../controllers/study-controller');
+} from '../controllers/study-controller';
 
 router.post('/:id', create_study_post);
 router.get('/study_list', get_study_list);
@@ -15,4 +17,4 @@ router.put('/:id', update_study_put);
 router.patch('/:id', update_study_patch);
 router.delete('/:id', delete_study);
 
-module.exports = router;
+export default router;

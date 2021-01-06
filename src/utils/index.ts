@@ -1,6 +1,7 @@
-exports.generateID = () => `${Math.floor(Math.random() * 1000000000)}`;
+import { RequestHandler } from 'express';
 
-exports.asyncHandler = (
-  fn: (req: Express.Request, res: Express.Response, next: any) => void
-) => (req: Express.Request, res: Express.Response, next: any) =>
-  Promise.resolve(fn(req, res, next)).catch(next);
+export const asyncHandler = (fn: RequestHandler): RequestHandler => (
+  req,
+  res,
+  next
+) => Promise.resolve(fn(req, res, next)).catch(next);

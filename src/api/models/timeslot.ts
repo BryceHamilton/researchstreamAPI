@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+import { Schema, model } from 'mongoose';
 
 const TimeSlotSchema = new Schema({
   study: { type: Schema.Types.ObjectId, ref: 'Study' },
@@ -9,4 +8,4 @@ const TimeSlotSchema = new Schema({
   participant: { type: Schema.Types.ObjectId, ref: 'Participant' },
 });
 
-module.exports = mongoose.model('TimeSlot', TimeSlotSchema, 'TimeSlot');
+export default model('TimeSlot', TimeSlotSchema, 'TimeSlot');

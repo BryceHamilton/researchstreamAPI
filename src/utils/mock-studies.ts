@@ -1,4 +1,14 @@
-const hardCodedStudies = [
+import Study, { IStudy } from '../api/models/study';
+
+export const addMockStudy = (study: IStudy) => {
+  Study.create(study, (err, study: IStudy) => {
+    if (err) return console.error(err);
+    const { _id, title } = study;
+    console.log('study added', { _id, title });
+  });
+};
+
+export const hardCodedStudies = [
   {
     studyId: 'kru',
     title: 'Insulin and Kidney Function Study',
@@ -216,7 +226,7 @@ const hardCodedStudies = [
   },
 ];
 
-const withGeolocation = [
+export const withGeolocation = [
   {
     title: 'Insulin and Kidney Function Study',
     purpose:
