@@ -1,4 +1,4 @@
 import { model } from 'mongoose';
-import UserSchema from './user';
+import UserSchema, { IUser } from './user';
 
-export default model('Researcher', UserSchema, 'Researcher');
+export default model<IUser>('Researcher', UserSchema, 'Researcher');

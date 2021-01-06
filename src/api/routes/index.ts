@@ -1,10 +1,7 @@
-import express, { Response, NextFunction } from 'express';
+import express from 'express';
+import { redirectToClient } from '../handlers/app-handlers';
 const router = express.Router();
 
-const clientAddress = process.env.CLIENT_ADDRESS;
-
-router.get('/', (_, res: Response, next: NextFunction) => {
-  clientAddress ? res.status(301).redirect(clientAddress) : next();
-});
+router.get('/', redirectToClient);
 
 export default router;
