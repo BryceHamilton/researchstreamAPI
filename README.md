@@ -8,5 +8,7 @@ Client app v1 (admin) demo deployed at: https://research-stream-admin.netlify.ap
 
 Partial Refactored v2 Client app: https://github.com/BryceHamilton/research-stream
 
+Demo Video: https://youtu.be/9gDgFwdnIL4
+
 Relation DB Diagram
 ![ER Diagram](public/assets/research-streamDB.jpg?raw=true 'Research Stream Database Schema')
